@@ -1,17 +1,17 @@
-//Creat web server
+// Create web server
+// 1. Load the express module
 const express = require('express');
+// 2. Create an express application
 const app = express();
-const port = 3000;
-
-//Create a route
+// 3. Define a route
 app.get('/comments', (req, res) => {
-    res.json([
-        {name: 'John', message: 'Hello'},
-        {name: 'Tim', message: 'Hi'}
-    ]);
+  res.send('Comments');
+});
+// 4. Start the server
+app.listen(3000, () => {
+  console.log('Server started');
 });
 
-//Start the server
-app.listen(port, () => {
-    console.log(`Server started at http://localhost:${port}`);
-});
+// 5. Test the server
+// Visit http://localhost:3000/comments in your browser
+// You should see the text "Comments"
